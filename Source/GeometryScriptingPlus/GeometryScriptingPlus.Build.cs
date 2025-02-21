@@ -25,7 +25,13 @@ public class GeometryScriptingPlus : ModuleRules
 		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"Core",
+				"Core", 
+				
+				"DynamicMesh",
+				"GeometryCore",
+				"GeometryFramework",
+				"GeometryScriptingCore",
+				"GeometryAlgorithms"
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
@@ -36,8 +42,6 @@ public class GeometryScriptingPlus : ModuleRules
 			{
 				"CoreUObject",
 				"Engine",
-				"Slate",
-				"SlateCore",
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);
