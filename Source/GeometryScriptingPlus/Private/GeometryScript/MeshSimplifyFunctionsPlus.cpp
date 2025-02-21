@@ -147,9 +147,8 @@ UDynamicMesh* UMeshSimplifyFunctionsPlus::CalculateResult(
 	EEdgeRefineFlags GroupBoundaryConstraint = EEdgeRefineFlags::NoConstraint;
 	EEdgeRefineFlags MaterialBoundaryConstraint = EEdgeRefineFlags::NoConstraint;
 	/** If true, sharp edges are preserved  */
-	// bool bPreserveSharpEdges = false;
-	bool bPreserveSharpEdges = true;
-	bool bAllowSeamCollapse = bPreserveSharpEdges;
+	bool bPreserveSharpEdges = false;
+	bool bAllowSeamCollapse = !bPreserveSharpEdges;
 	/** Prevent normal flips */
 	bool bPreventNormalFlips = true;
 	/** Prevent introduction of tiny triangles or slivers */
@@ -180,7 +179,6 @@ UDynamicMesh* UMeshSimplifyFunctionsPlus::CalculateResult(
 		                                    FQEMSimplification::ESimplificationCollapseModes::MinimalQuadricPositionError,
 		                                    bUseQuadricMemory,
 		                                    UseGeometricTolerance);
-		int ResultTriCount = OriginalMesh->TriangleCount();
 	}
 	else if (Options.SimplifyType == ERuntimeSimplifyType::Attribute)
 	{
